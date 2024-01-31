@@ -1,0 +1,23 @@
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing_party/new" %>
+<%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
+
+<%= "Movie Title: #{@movie[:title]}" %><br><br>
+<%= "Vote Average: #{@movie[:vote_average]}" %><br><br>
+<% runtime = @movie[:runtime] %>
+<% hours = runtime / 60 %>
+<% minutes = runtime % 60 %>
+<%= "Runtime: #{hours} hours #{minutes} minutes" %><br><br>
+<% genre_names = @movie[:genres].map { |g| g[:name] }.join(", ") %>
+<%= "Genre: #{genre_names}" %><br><br>
+<%= "Summary: #{@movie[:overview]}" %><br><br>
+<%= "First 10 Cast Members:" %><br>
+<% @cast.first(10).each do |c| %>
+  <%= "Character: #{c[:character]}" %><br>
+  <%= "Actor/Actress: #{c[:name]}" %><br><br>
+<% end %>
+<%= "Total Reviews: #{@reviews.count}" %>
+<%= "Each Review's Author and Information:" %><br>
+<% @reviews.each do |review| %>
+  <%= "Author: #{review[:author]}" %><br>
+  <%= "Information: #{review[:author_details]}" %><br>
+<% end %>
