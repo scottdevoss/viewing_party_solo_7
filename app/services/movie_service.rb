@@ -4,7 +4,7 @@ class MovieService
   end
 
   def get_url(url)
-    response = conn.get("/3/movie/top_rated")
+    response = conn.get(url)
     JSON.parse(response.body, symbolize_names: true)
   end
 
