@@ -6,7 +6,10 @@ class MoviesController < ApplicationController
     end
     response = conn.get("/3/movie/top_rated")
     json = JSON.parse(response.body, symbolize_names: true)
-    @movies = json[:results]
+    # @movies = json[:results]
+    @movies = json[:results].map do |movie_data|
+      Movie.new(movie_data)
+    end
   end
 
   def show
