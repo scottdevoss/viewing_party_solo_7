@@ -1,5 +1,5 @@
 <%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %>
-<% @movies.each do |movie| %>
+<% @facade.movies.each do |movie| %>
   <section id="movie-<%= movie.id %>">
     <%= "Movie Title:" %>
     <%= link_to "#{movie.title}", "/users/#{@user.id}/movies/#{movie.id}" %><br>
