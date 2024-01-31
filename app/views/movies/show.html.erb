@@ -1,2 +1,12 @@
 <%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing_party/new" %>
-<%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %>
+<%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
+
+<%= "Movie Title: #{@movie[:title]}" %><br>
+<%= "Vote Average: #{@movie[:vote_average]}" %><br>
+<% runtime = @movie[:runtime] %>
+<% hours = runtime / 60 %>
+<% minutes = runtime % 60 %>
+<%= "Runtime: #{hours} hours #{minutes} minutes" %><br>
+<% genre_names = @movie[:genres].map { |g| g[:name] }.join(", ") %>
+<%= "Genre: #{genre_names}" %>
+<%= "Summary: #{@movie[:summary]}" %>
