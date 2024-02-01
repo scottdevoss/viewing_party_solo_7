@@ -18,6 +18,7 @@
 <%= "Total Reviews: #{@reviews.count}" %>
 <%= "Each Review's Author and Information:" %><br>
 <% @reviews.each do |review| %>
-  <%= "Author: #{review[:author]}" %><br>
-  <%= "Information: #{review[:author_details]}" %><br>
+  <%= "Author: #{review.author}" %><br>
+  <%= "Username: #{review.username}" %><br>
+  <%= "Rating: #{review.rating}" %><br>
 <% end %>

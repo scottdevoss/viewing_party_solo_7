@@ -30,6 +30,10 @@ class MoviesController < ApplicationController
     end
     response3 = conn3.get("/3/movie/#{params[:movie_id]}/reviews")
     json3 = JSON.parse(response3.body, symbolize_names: true)
-    @reviews = json3[:results]
+    # @reviews = json3[:results]
+    @reviews = json3[:results].map do |review|
+      Review.new(review)
+    end
+    
   end
 end
