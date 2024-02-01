@@ -2,34 +2,14 @@ class MoviesController < ApplicationController
   def index
     @facade = MovieFacade.new
     @user = User.find(params[:user_id])
-
-    # conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-    #   faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
-    # end
-    # response = conn.get("/3/movie/top_rated")
-    # json = JSON.parse(response.body, symbolize_names: true)
-    # # @movies = json[:results]
-    # @movies = json[:results].map do |movie_data|
-    #   Movie.new(movie_data)
-    # end
   end
   
   def show
-    # @movie_id = params[:movie_id]
+    
     @user = User.find(params[:user_id])
     @movie = MovieDetailsFacade.new(params[:movie_id])
-   
-    # @movie = User.find(params[:movie_id])
     
-    # conn = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
-    #   faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
-    # end
-    # response = conn.get("/3/movie/#{params[:movie_id]}")
-    # json = JSON.parse(response.body, symbolize_names: true)
-    # # @movie = json
-    # @movie = MovieDetails.new(json)
-
-
+   
 
 
     conn2 = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
@@ -37,7 +17,12 @@ class MoviesController < ApplicationController
     end
     response2 = conn2.get("/3/movie/#{params[:movie_id]}/credits")
     json2 = JSON.parse(response2.body, symbolize_names: true)
-    @cast = json2[:cast]
+    # @cast = json2[:cast]
+    @cast = json2[:cast].map do |cast_member|
+      Cast.new(cast_member)
+    end
+
+
 
     conn3 = Faraday.new(url: "https://api.themoviedb.org") do |faraday|
       faraday.params["api_key"] = Rails.application.credentials.tmdb[:key]
