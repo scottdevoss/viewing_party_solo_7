@@ -17,13 +17,13 @@ RSpec.describe "New Viewing Party Page", type: :feature do
     # - Checkboxes next to each existing user in the system
     # - Button to create a party
 
-    it "Should see the name of the movie title rendered above a form" do
+    it "Should see the name of the movie title rendered above a form", :vcr do
       visit "/users/#{@user1.id}/movies/238/viewing_party/new"
       
-      expect(page).to have_content("The Godfather")
+      expect(page).to have_content("Create Viewing Party For: The Godfather")
     end
 
-    it "Should see a form with fields: Duration of party, when, start time, checkboxes, button to create a party" do
+    it "Should see a form with fields: Duration of party, when, start time, checkboxes, button to create a party", :vcr do
       visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
       expect(page).to have_field(:duration)
@@ -39,7 +39,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       fill_in(:when, with: '2024-02-15')
       fill_in(:start_time, with: '12:00:00 UTC')
 
-      click_button('Create A Party')
+      click_button('Create Party')
 
       expect(current_path).to eq("/users/#{@user1.id}")
       expect(page).to have_content('When: 2024-02-15')

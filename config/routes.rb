@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get "/users/:id/discover", to: "discover#index"
   get "/users/:user_id/movies", to: "movies#index"
   get "/users/:user_id/movies/:movie_id", to: "movies#show"
+  get "/users/:user_id/movies/:movie_id/viewing_party/new", to: "viewing_party#new"
 
   resources :users, only: [:show, :create] do
   end
