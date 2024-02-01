@@ -15,9 +15,9 @@
   <%= "Character: #{c.character}" %><br>
   <%= "Actor/Actress: #{c.name}" %><br><br>
 <% end %>
-<%= "Total Reviews: #{@reviews.count}" %>
+<%= "Total Reviews: #{@reviews.review.count}" %>
 <%= "Each Review's Author and Information:" %><br>
-<% @reviews.each do |review| %>
+<% @reviews.review.each do |review| %>
   <%= "Author: #{review.author}" %><br>
   <%= "Username: #{review.username}" %><br>
   <%= "Rating: #{review.rating}" %><br>
