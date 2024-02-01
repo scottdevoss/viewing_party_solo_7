@@ -1,23 +1,24 @@
-<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie[:id]}/viewing_party/new" %>
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new" %>
 <%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
 
-<%= "Movie Title: #{@movie[:title]}" %><br><br>
-<%= "Vote Average: #{@movie[:vote_average]}" %><br><br>
-<% runtime = @movie[:runtime] %>
+<%= "Movie Title: #{@movie.movie_details.title}" %><br><br>
+<%= "Vote Average: #{@movie.movie_details.vote_average}" %><br><br>
+<% runtime = @movie.movie_details.runtime %>
 <% hours = runtime / 60 %>
 <% minutes = runtime % 60 %>
 <%= "Runtime: #{hours} hours #{minutes} minutes" %><br><br>
-<% genre_names = @movie[:genres].map { |g| g[:name] }.join(", ") %>
+<% genre_names = @movie.movie_details.genres.map { |g| g[:name] }.join(", ") %>
 <%= "Genre: #{genre_names}" %><br><br>
-<%= "Summary: #{@movie[:overview]}" %><br><br>
+<%= "Summary: #{@movie.movie_details.overview}" %><br><br>
 <%= "First 10 Cast Members:" %><br>
-<% @cast.first(10).each do |c| %>
-  <%= "Character: #{c[:character]}" %><br>
-  <%= "Actor/Actress: #{c[:name]}" %><br><br>
+<% @cast.members.first(10).each do |c| %>
+  <%= "Character: #{c.character}" %><br>
+  <%= "Actor/Actress: #{c.name}" %><br><br>
 <% end %>
-<%= "Total Reviews: #{@reviews.count}" %>
+<%= "Total Reviews: #{@reviews.review.count}" %>
 <%= "Each Review's Author and Information:" %><br>
-<% @reviews.each do |review| %>
-  <%= "Author: #{review[:author]}" %><br>
-  <%= "Information: #{review[:author_details]}" %><br>
+<% @reviews.review.each do |review| %>
+  <%= "Author: #{review.author}" %><br>
+  <%= "Username: #{review.username}" %><br>
+  <%= "Rating: #{review.rating}" %><br>
 <% end %>
