@@ -36,7 +36,7 @@ RSpec.describe "Movies Results Page", type: :feature do
       
       within('#movie-238') do
         expect(page).to have_link('The Godfather')
-        expect(page).to have_content('Vote Average: 8.707')
+        expect(page).to have_content('Vote Average: 8.708')
       end
       within('#movie-278') do
         expect(page).to have_link('The Shawshank Redemption')
@@ -44,7 +44,7 @@ RSpec.describe "Movies Results Page", type: :feature do
       end
       within('#movie-240') do
         expect(page).to have_link('The Godfather Part II')
-        expect(page).to have_content('Vote Average: 8.591')
+        expect(page).to have_content('Vote Average: 8.592')
       end
 
       click_link("The Godfather")

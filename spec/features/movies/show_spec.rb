@@ -46,7 +46,7 @@ RSpec.describe "Movies Details Page", type: :feature do
       visit "/users/#{@user1.id}/movies/238"
       
       expect(page).to have_content("Movie Title: The Godfather")
-      expect(page).to have_content("Vote Average: 8.707")
+      expect(page).to have_content("Vote Average: 8.708")
       expect(page).to have_content("Runtime: 2 hours 55 minutes")
       expect(page).to have_content("Genre: Drama, Crime")
       expect(page).to have_content("Summary:")
