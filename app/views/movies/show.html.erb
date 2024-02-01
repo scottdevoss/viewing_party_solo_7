@@ -11,7 +11,7 @@
 <%= "Genre: #{genre_names}" %><br><br>
 <%= "Summary: #{@movie.movie_details.overview}" %><br><br>
 <%= "First 10 Cast Members:" %><br>
-<% @cast.first(10).each do |c| %>
+<% @cast.members.first(10).each do |c| %>
   <%= "Character: #{c.character}" %><br>
   <%= "Actor/Actress: #{c.name}" %><br><br>
 <% end %>
