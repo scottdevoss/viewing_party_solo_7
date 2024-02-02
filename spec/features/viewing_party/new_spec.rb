@@ -42,8 +42,9 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       click_button('Create Party')
       expect(current_path).to eq("/users/#{@user1.id}")
       expect(page).to have_content("#{@user1.name}'s Dashboard")
-      expect(page).to have_content('When: 2024-02-15')
-      expect(page).to have_content('Start Time: 12:00:00 UTC')
+      expect(page).to have_content('Party Time: 2024-02-15 at 12:00:00 UTC')
+      expect(page).to have_content("Host: #{@user1.name}")
+      expect(page).to have_content("Who's Coming?")
     end
   end
 end
