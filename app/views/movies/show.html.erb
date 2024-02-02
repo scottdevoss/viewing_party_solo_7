@@ -1,4 +1,4 @@
-<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new" %>
+<%= button_to "Create a Viewing Party", "/users/#{@user.id}/movies/#{@movie.id}/viewing_party/new", method: :get %>
 <%= button_to "Return To Discover Page", "/users/#{@user.id}/discover", method: :get %><br>
 
 <%= "Movie Title: #{@movie.movie_details.title}" %><br><br>
@@ -15,10 +15,10 @@
   <%= "Character: #{c.character}" %><br>
   <%= "Actor/Actress: #{c.name}" %><br><br>
 <% end %>
-<%= "Total Reviews: #{@reviews.review.count}" %>
-<%= "Each Review's Author and Information:" %><br>
+<%= "Total Reviews: #{@reviews.review.count}" %><br><br>
+<%= "Each Review's Author and Information:" %><br><br>
 <% @reviews.review.each do |review| %>
   <%= "Author: #{review.author}" %><br>
   <%= "Username: #{review.username}" %><br>
-  <%= "Rating: #{review.rating}" %><br>
+  <%= "Rating: #{review.rating}" %><br><br>
 <% end %>

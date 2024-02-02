@@ -74,7 +74,7 @@ RSpec.describe 'Create New User', type: :feature do
       fill_in "user[name]", with: "Sammy"
       fill_in "user[email]", with: "sam@emailcom."
       click_button 'Create New User'
-
+      
       expect(current_path).to eq(register_user_path)
       expect(page).to have_content('Email is invalid')
 
