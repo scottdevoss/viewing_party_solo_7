@@ -27,7 +27,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       visit "/users/#{@user1.id}/movies/238/viewing_party/new"
 
       expect(page).to have_field(:duration)
-      expect(page).to have_field(:when)
+      expect(page).to have_field(:date)
       expect(page).to have_field(:start_time)
       expect(page).to have_content("Invite Other Users")
       expect(page).to_not have_unchecked_field(@user1.name)
@@ -36,12 +36,12 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       expect(page).to have_button("Create Party")
 
       fill_in(:duration, with: '300')
-      fill_in(:when, with: '2024-02-15')
+      fill_in(:date, with: '2024-02-15')
       fill_in(:start_time, with: '12:00:00 UTC')
 
       click_button('Create Party')
-
       expect(current_path).to eq("/users/#{@user1.id}")
+      expect(page).to have_content("#{@user1.name}'s Dashboard")
       expect(page).to have_content('When: 2024-02-15')
       expect(page).to have_content('Start Time: 12:00:00 UTC')
     end
