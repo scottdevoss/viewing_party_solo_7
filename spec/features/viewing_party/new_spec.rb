@@ -30,6 +30,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       expect(page).to have_field(:date)
       expect(page).to have_field(:start_time)
       expect(page).to have_content("Invite Other Users")
+      # save_and_open_page
       expect(page).to_not have_unchecked_field(@user1.name)
       expect(page).to have_unchecked_field(@user2.name)
       expect(page).to have_unchecked_field(@user3.name)
@@ -38,6 +39,7 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       fill_in(:duration, with: '300')
       fill_in(:date, with: '2024-02-15')
       fill_in(:start_time, with: '12:00:00 UTC')
+      check("#{@user2.name}")
 
       click_button('Create Party')
       expect(current_path).to eq("/users/#{@user1.id}")
@@ -45,6 +47,8 @@ RSpec.describe "New Viewing Party Page", type: :feature do
       expect(page).to have_content('Party Time: 2024-02-15 at 12:00:00 UTC')
       expect(page).to have_content("Host: #{@user1.name}")
       expect(page).to have_content("Who's Coming?")
+      expect(page).to have_content("#{@user2.name}")
+      expect(page).to_not have_content("#{@user3.name}")
     end
   end
 end

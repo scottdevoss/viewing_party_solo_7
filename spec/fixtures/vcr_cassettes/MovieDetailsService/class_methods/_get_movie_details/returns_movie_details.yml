@@ -25,36 +25,36 @@ http_interactions:
       Connection:
       - keep-alive
       Date:
-      - Thu, 01 Feb 2024 20:57:23 GMT
+      - Fri, 02 Feb 2024 15:36:09 GMT
       Server:
       - openresty
       Cache-Control:
-      - public, max-age=10768
+      - public, max-age=21876
       X-Memc:
       - HIT
       X-Memc-Key:
       - 4f4d3badf3c9d576e4abc7160d5da6a0
       X-Memc-Age:
-      - '11708'
+      - '6309'
       X-Memc-Expires:
-      - '10768'
+      - '21876'
       Etag:
-      - W/"ddcc553765cd047860e34b6b40e0b85d"
+      - W/"219bb01a2faba38455bdbbd334656f56"
       Vary:
       - Accept-Encoding
       - Origin
       X-Cache:
       - Hit from cloudfront
       Via:
-      - 1.1 c11dc3a4786e038ddffb5e925a892302.cloudfront.net (CloudFront)
+      - 1.1 9367844cfa8aaebd6a8f032ea2e7d4ec.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN52-P3
       Alt-Svc:
       - h3=":443"; ma=86400
       X-Amz-Cf-Id:
-      - kLzwfhsXvq8DjM4BLK--LQXFnfyloFjvdPNrFXQ-uwauqilAhd_pYA==
+      - jbM8t5NIL2fxoF8FtXj0Wn-QJx-lxLLtaembTzCnX77vlVVogn3nOQ==
       Age:
-      - '973'
+      - '100'
     body:
       encoding: ASCII-8BIT
       string: '{"adult":false,"backdrop_path":"/rSPw7tgCH9c6NqICZef4kZjFOQ5.jpg","belongs_to_collection":{"id":230,"name":"The
@@ -63,9 +63,9 @@ http_interactions:
         fictional Italian-American Corleone crime family. When organized crime family
         patriarch, Vito Corleone barely survives an attempt on his life, his youngest
         son, Michael steps in to take care of the would-be killers, launching a campaign
-        of bloody revenge.","popularity":118.977,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
+        of bloody revenge.","popularity":116.597,"poster_path":"/3bhkrj58Vtu7enYsRolD1fZdja1.jpg","production_companies":[{"id":4,"logo_path":"/gz66EfNoYPqHTYI4q9UEN4CbHRc.png","name":"Paramount","origin_country":"US"},{"id":10211,"logo_path":null,"name":"Alfran
         Productions","origin_country":"US"}],"production_countries":[{"iso_3166_1":"US","name":"United
         States of America"}],"release_date":"1972-03-14","revenue":245066411,"runtime":175,"spoken_languages":[{"english_name":"English","iso_639_1":"en","name":"English"},{"english_name":"Italian","iso_639_1":"it","name":"Italiano"},{"english_name":"Latin","iso_639_1":"la","name":"Latin"}],"status":"Released","tagline":"An
-        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":19377}'
-  recorded_at: Thu, 01 Feb 2024 21:13:35 GMT
+        offer you can''t refuse.","title":"The Godfather","video":false,"vote_average":8.708,"vote_count":19380}'
+  recorded_at: Fri, 02 Feb 2024 15:37:48 GMT
 recorded_with: VCR 6.2.0
